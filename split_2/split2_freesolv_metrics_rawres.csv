@@ -1,0 +1,12 @@
+,MAE,RMSE,R2 Score,Correlation
+Chemberta2,0.8,1.273,0.88,0.945
+Molformer,0.738,1.346,0.866,0.931
+Molbert,0.855,1.383,0.858,0.93
+LASSO,1.251,2.233,0.63,0.804
+Group Lasso (2 groups),5.814,22.966,-38.117,0.405
+Group Lasso (4 groups),1.509,3.528,0.077,0.667
+Elastic Net,1.181,2.274,0.616,0.798
+SVR,1.285,2.218,0.635,0.805
+Random Forest,1.538,2.507,0.534,0.764
+XGBoost,1.215,2.013,0.699,0.848
+Neural Network,1.273,2.188,0.645,0.809

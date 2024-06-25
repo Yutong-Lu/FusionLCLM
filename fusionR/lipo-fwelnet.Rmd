@@ -16,10 +16,10 @@ library(Metrics)
 
 ```{r}
 # import data from split-1
-split1_X_valid2 <- as.matrix(read.csv('split-1/processed_data/lipo_X_ensemble_valid2.csv'))
+split1_X_valid2 <- as.matrix(read.csv('split-1/processed_data/lipo_X_ensemble_valid2_scaled.csv'))
 split1_y_valid2 <- as.matrix(read.csv('split-1/processed_data/lipo_y_ensemble_valid2.csv'))
 
-split1_X_test <- as.matrix(read.csv('split-1/processed_data/lipo_X_ensemble_test.csv'))
+split1_X_test <- as.matrix(read.csv('split-1/processed_data/lipo_X_ensemble_test_scaled.csv'))
 split1_y_test <- as.matrix(read.csv('split-1/processed_data/lipo_y_ensemble_test.csv'))
 
 # Define mean and standard deviation from training set
@@ -81,12 +81,10 @@ for (i in 1:length(groups)) {
     z4[groups4[[i]], i] <- 1
 }
 
-fit4 <- fwelnet(split1_X_valid2, split1_y_valid2, z4)
-```
+# fit4 <- fwelnet(split1_X_valid2, split1_y_valid2, z4)
 
-```{r}
 # predictions for first 5 observations at 20th lambda value
-predict(fit4, split1_X_test) * train_sd1 + train_mean1
+# predict(fit4, split1_X_test) * train_sd1 + train_mean1
 
 # coefficients at the 20th lambda value (including intercept)
 # as.numeric(coef(fit4))
@@ -128,10 +126,10 @@ print(paste("Correlation:", correlation_value))
 
 ```{r}
 # import data from split-2
-split2_X_valid2 <- as.matrix(read.csv('split-2/processed_data/lipo_X_ensemble_valid2.csv'))
+split2_X_valid2 <- as.matrix(read.csv('split-2/processed_data/lipo_X_ensemble_valid2_scaled.csv'))
 split2_y_valid2 <- as.matrix(read.csv('split-2/processed_data/lipo_y_ensemble_valid2.csv'))
 
-split2_X_test <- as.matrix(read.csv('split-2/processed_data/lipo_X_ensemble_test.csv'))
+split2_X_test <- as.matrix(read.csv('split-2/processed_data/lipo_X_ensemble_test_scaled.csv'))
 split2_y_test <- as.matrix(read.csv('split-2/processed_data/lipo_y_ensemble_test.csv'))
 
 # Define mean and standard deviation from training set
@@ -223,10 +221,10 @@ print(paste("Correlation:", correlation_value))
 
 ```{r}
 # Load the training set of meta-model
-split3_X_valid2 <- as.matrix(read.csv('split-3/processed_data/lipo_X_ensemble_valid2.csv'))
+split3_X_valid2 <- as.matrix(read.csv('split-3/processed_data/lipo_X_ensemble_valid2_scaled.csv'))
 split3_y_valid2 <- as.matrix(read.csv('split-3/processed_data/lipo_y_ensemble_valid2.csv'))
 
-split3_X_test <- as.matrix(read.csv('split-3/processed_data/lipo_X_ensemble_test.csv'))
+split3_X_test <- as.matrix(read.csv('split-3/processed_data/lipo_X_ensemble_test_scaled.csv'))
 split3_y_test <- as.matrix(read.csv('split-3/processed_data/lipo_y_ensemble_test.csv'))
 
 # Define mean and standard deviation from training set
